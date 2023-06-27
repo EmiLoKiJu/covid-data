@@ -71,7 +71,8 @@ h3 {
 }
 
 .country {
-  width: 200px;
+  border: 2px solid white;
+  width: calc(100% - 2px);
   height: auto;
 }
 
@@ -100,10 +101,11 @@ h3 {
 }
 
 .home {
-  background-color: pink;
+  height: 100vh;
+  color: white;
 }
 
-.navbar {
+.almostnavbar {
   width: 90%;
   padding: 24px 4%;
 }
@@ -112,6 +114,34 @@ h3 {
   width: 50%;
 }
 
-.menuimg img {
+.imgmenu {
   width: 100%;
+}
+
+.bcWhite {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.bcPink {
+  background-color: pink;
+  color: black;
+  border-color: black;
+}
+
+.bcBlack {
+  background-color: black;
+}
+
+.bcRed {
+  background-color: red;
+}
+
+.bcBlue {
+  background-color: blue;
+}
+
+.bcGreen {
+  background-color: green;
 }

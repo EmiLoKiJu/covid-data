@@ -1,7 +1,9 @@
 /* eslint-disable camelcase */
 
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+
+export const setColor = createAction('cases/setColor');
 
 export const getCases = createAsyncThunk('cases/getCases', async (inputcountry) => {
   try {
@@ -45,7 +47,7 @@ export const getCases = createAsyncThunk('cases/getCases', async (inputcountry) 
 
 const casesSlice = createSlice({
   name: 'cases',
-  initialState: { casesObj: [], isLoading: true },
+  initialState: { casesObj: [], isLoading: true, color: 'Pink' },
   extraReducers: (builder) => {
     builder
       .addCase(getCases.pending, (state) => ({ ...state, isLoading: true }))
@@ -54,7 +56,10 @@ const casesSlice = createSlice({
         isLoading: false,
         casesObj: action.payload,
       }))
-      .addCase(getCases.rejected, (state) => ({ ...state, isLoading: false }));
+      .addCase(getCases.rejected, (state) => ({ ...state, isLoading: false }))
+      .addCase(setColor, (state, action) => {
+        state.color = action.payload;
+      });
   },
 });
 

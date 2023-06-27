@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { setColor } from '../redux/cases/casesSlice';
 
 const Settings = () => {
@@ -11,7 +10,6 @@ const Settings = () => {
 
   return (
     <div>
-      <Link className="menuimg dflex" to="/">Go back</Link>
       <button type="button" onClick={() => handleColors('Red')}>Red</button>
       <button type="button" onClick={() => handleColors('Blue')}>Blue</button>
       <button type="button" onClick={() => handleColors('Green')}>Green</button>

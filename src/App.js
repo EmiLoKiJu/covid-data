@@ -5,30 +5,55 @@ import {
   Route,
   Outlet,
   useLocation,
+  useNavigate,
+  Link,
 } from 'react-router-dom';
 import './App.css';
-import Chile from './components/chile';
-import Argentina from './components/argentina';
 import Home from './components/home';
 import Settings from './components/settings';
 import Cases from './components/cases';
+import Country from './components/country';
+import HistoryCases from './components/historycases';
+import HistoryCountry from './components/historycountry';
+import previousbutton from './img/previousbutton.svg';
+import previousbuttonblack from './img/previousbuttonblack.svg';
+import settingsicon from './img/settingsicon.svg';
+import settingsiconblack from './img/settingsiconblack.svg';
 
 const Layout = () => {
   const background = useSelector((store) => store.cases.color);
   const location = useLocation();
+  const navigate = useNavigate();
   const showNavbar = location.pathname !== '/';
+  const pathForNav = location.pathname.split('/').pop();
 
   return (
-    <>
+    <div className={`bc${background}`}>
       {showNavbar && (
-        <div className={`navbar bc${background}`}>
-          <h2>{location.pathname.slice(1)}</h2>
+        <div className="dflex spacebetween acenter navbar">
+          <svg width="24" height="24" className={`bc${background}`}>
+            {background === 'White' || background === 'Pink' ? (
+              <image onClick={() => navigate(-1)} xlinkHref={previousbuttonblack} width="100%" height="100%" />
+            ) : (
+              <image onClick={() => navigate(-1)} xlinkHref={previousbutton} width="100%" height="100%" />
+            )}
+          </svg>
+          <div className={`bc${background}`}>
+            <h2>{pathForNav}</h2>
+          </div>
+          <svg width="24" height="24" className={`bc${background}`}>
+            {background === 'White' || background === 'Pink' ? (
+              <Link to="./Settings"><image xlinkHref={settingsiconblack} width="100%" height="100%" /></Link>
+            ) : (
+              <Link to="./Settings"><image xlinkHref={settingsicon} width="100%" height="100%" /></Link>
+            )}
+          </svg>
         </div>
       )}
       <div className="not-navbar">
         <Outlet />
       </div>
-    </>
+    </div>
   );
 };
 
@@ -42,8 +67,9 @@ const App = () => (
         />
         <Route path="Settings" element={<Settings />} />
         <Route path="Cases" element={<Cases />} />
-        <Route path="Chile" element={<Chile />} />
-        <Route path="Argentina" element={<Argentina />} />
+        <Route path="HistoryCases" element={<HistoryCases />} />
+        <Route path="country/:country" element={<Country />} />
+        <Route path="historycountry/:country" element={<HistoryCountry />} />
         <Route
           path="RickAstley"
           element={(

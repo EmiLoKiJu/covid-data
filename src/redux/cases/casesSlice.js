@@ -41,22 +41,46 @@ export const getCases = createAsyncThunk('cases/getCases', async (inputcountry) 
     };
     return coviddata;
   } catch (error) {
-    return error;
+    console.log('This did not work as expected. Reload the page please');
+    window.location.reload();
+    throw error;
+  }
+});
+
+export const getHistoricallData = createAsyncThunk('historicallData/getHistoricallData', async (inputcountry, lastdays) => {
+  try {
+    const response = await axios(`https://disease.sh/v3/covid-19/historical/${inputcountry}?lastdays=${lastdays}`);
+    const coviddatabrute = await response.data;
+    console.log(coviddatabrute);
+    return coviddatabrute;
+  } catch (error) {
+    console.log('This did not work as expected. Reload the page please');
+    window.location.reload();
+    throw error;
   }
 });
 
 const casesSlice = createSlice({
   name: 'cases',
-  initialState: { casesObj: [], isLoading: true, color: 'Pink' },
+  initialState: {
+    casesObj: [], historicallObj: [], isLoadingCases: true, isLoadingHistory: true, color: 'Pink',
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(getCases.pending, (state) => ({ ...state, isLoading: true }))
+      .addCase(getCases.pending, (state) => ({ ...state, isLoadingCases: true }))
       .addCase(getCases.fulfilled, (state, action) => ({
         ...state,
-        isLoading: false,
+        isLoadingCases: false,
         casesObj: action.payload,
       }))
-      .addCase(getCases.rejected, (state) => ({ ...state, isLoading: false }))
+      .addCase(getCases.rejected, (state) => ({ ...state, isLoadingCases: false }))
+      .addCase(getHistoricallData.pending, (state) => ({ ...state, isLoadingHistory: true }))
+      .addCase(getHistoricallData.fulfilled, (state, action) => ({
+        ...state,
+        isLoadingHistory: false,
+        historicallObj: action.payload,
+      }))
+      .addCase(getHistoricallData.rejected, (state) => ({ ...state, isLoadingHistory: false }))
       .addCase(setColor, (state, action) => {
         state.color = action.payload;
       });

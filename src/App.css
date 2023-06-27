@@ -71,8 +71,7 @@ h3 {
 }
 
 .country {
-  border: 2px solid white;
-  width: calc(100% - 2px);
+  width: 100%;
   height: auto;
 }
 
@@ -105,6 +104,11 @@ h3 {
   color: white;
 }
 
+.navbar {
+  color: white;
+  margin: 1% 1%;
+}
+
 .almostnavbar {
   width: 90%;
   padding: 24px 4%;
@@ -118,16 +122,18 @@ h3 {
   width: 100%;
 }
 
+.backbutton {
+  border: none;
+}
+
 .bcWhite {
   background-color: white;
   color: black;
-  border-color: black;
 }
 
 .bcPink {
   background-color: pink;
   color: black;
-  border-color: black;
 }
 
 .bcBlack {

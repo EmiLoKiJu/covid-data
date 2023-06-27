@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  margin: 0;
+  padding: 1%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  margin: 0;
+  padding: 1%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans\ Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans\ Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans\ Medium.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('./fonts/Lato/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('./fonts/Lato/Lato-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('./fonts/Lato/Lato-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.lato {
+  font-family: 'lato', sans-serif;
+}
+
+.gill-sans {
+  font-family: 'gill-sans', sans-serif;
+}
+
+.country {
+  width: 200px;
+  height: auto;
+}
+
+.dflex {
   display: flex;
+}
+
+.flexcol {
   flex-direction: column;
-  align-items: center;
+}
+
+.jcenter {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.acenter {
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.spacebetween {
+  justify-content: space-between;
+}
+
+.titlecont {
+  min-width: 180px;
+}
+
+.home {
+  background-color: pink;
+}
+
+.navbar {
+  width: 90%;
+  padding: 24px 4%;
+}
+
+.menuimg {
+  width: 50%;
+}
+
+.menuimg img {
+  width: 100%;
 }

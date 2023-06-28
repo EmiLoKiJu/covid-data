@@ -9,12 +9,31 @@ Chart.register(...registerables);
 const DataHistoryCountry = () => {
   const casesdata = useSelector((store) => store.cases.historicallObj.timeline.cases);
   const deathsdata = useSelector((store) => store.cases.historicallObj.timeline.deaths);
-  const recovereddata = useSelector((store) => store.cases.historicallObj.timeline.recovered);
   const timeLabels = Object.keys(casesdata);
   const formattedDates = timeLabels.map((date) => moment(date, 'M/D/YY').format('YYYY-MM-DD'));
   const casesvalues = Object.values(casesdata);
   const deathsvalues = Object.values(deathsdata);
-  const recoveredvalues = Object.values(recovereddata);
+  const background = useSelector((store) => store.cases.color);
+
+  const finalbc = (background) => {
+    switch (background) {
+      case 'White':
+        return 'rgba(221, 221, 221, 1)';
+      case 'Black':
+        return 'rgba(32, 32, 32, 1)';
+      case 'Red':
+        return 'rgba(201, 7, 7, 1)';
+      case 'Blue':
+        return 'rgba(15, 15, 172, 1)';
+      case 'Green':
+        return 'rgba(0, 94, 0, 1)';
+      default:
+        return 'rgba(236, 63, 159, 1)';
+    }
+  };
+
+  const textcolor = (background) => (background === 'White' || background === 'Pink' ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)');
+
   const chartCasesData = {
     labels: formattedDates,
     datasets: [
@@ -22,8 +41,9 @@ const DataHistoryCountry = () => {
         label: 'Cases',
         data: casesvalues,
         fill: false,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: finalbc(background),
+        borderColor: textcolor(background),
+        color: textcolor(background),
       },
     ],
   };
@@ -35,21 +55,9 @@ const DataHistoryCountry = () => {
         label: 'Deaths',
         data: deathsvalues,
         fill: false,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
-      },
-    ],
-  };
-
-  const chartRecoveredData = {
-    labels: formattedDates,
-    datasets: [
-      {
-        label: 'Recovered',
-        data: recoveredvalues,
-        fill: false,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: finalbc(background),
+        borderColor: textcolor(background),
+        color: textcolor(background),
       },
     ],
   };
@@ -58,21 +66,32 @@ const DataHistoryCountry = () => {
     scales: {
       x: {
         type: 'time',
+        ticks: {
+          color: textcolor(background),
+        },
       },
       y: {
         type: 'linear',
+        ticks: {
+          color: textcolor(background),
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          color: textcolor(background),
+        },
       },
     },
   };
 
   return (
     <div>
-      <div>Hola como estay?</div>
+      <div className={`data bcUp${background}`}>Hola como estay?</div>
       <div>
-        <h2>Graph</h2>
-        <Line data={chartCasesData} options={options} />
-        <Line data={chartDeathsData} options={options} />
-        <Line data={chartRecoveredData} options={options} />
+        <Line className={`data bcDown${background}`} data={chartCasesData} options={options} />
+        <Line className={`data bcDown${background}`} data={chartDeathsData} options={options} />
       </div>
     </div>
   );

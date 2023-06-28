@@ -1,22 +1,22 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { Link } from 'react-router-dom';
-import chilesvg from '../img/chilesvg.svg';
-import argentinasvg from '../img/argentinasvg.svg';
+import countriesArray from './countriesarray';
 
 const HistoryCases = () => {
   const background = useSelector((store) => store.cases.color);
-
   return (
-    <div className={`home dflex flexcol acenter bc${background}`}>
-      <div>Cases</div>
-      <div className="dflex">
-        <Link className="menuimg dflex" to="../historycountry/Chile"><img src={chilesvg} alt="Chile" className={`country bc${background}`} /></Link>
-        <Link className="menuimg dflex" to="../historycountry/Argentina"><img src={argentinasvg} alt="Argentima" className={`country bc${background}`} /></Link>
-      </div>
-      <div className="dflex">
-        <Link className="menuimg dflex" to="../country/Chile"><img src={chilesvg} alt="Chile" className={`country bc${background}`} /></Link>
-        <Link className="menuimg dflex" to="../country/Argentina"><img src={argentinasvg} alt="Argentima" className={`country bc${background}`} /></Link>
-      </div>
+    <div className={`dflex wrap bc${background}`}>
+      {countriesArray.map((country, index) => (
+        <div className="dflex menuimg" key={country.name}>
+          <Link className="dflex" to={`../historycountry${country.path}`}>
+            <img
+              src={country.image}
+              alt={country.alt}
+              className={`country ${(index + 1) % 4 < 2 ? 'bcUp' : 'bcDown'}${background}`}
+            />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };

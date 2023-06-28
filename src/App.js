@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -8,6 +10,7 @@ import {
   useNavigate,
   Link,
 } from 'react-router-dom';
+import { setColor } from './redux/cases/casesSlice';
 import './App.css';
 import Home from './components/home';
 import Settings from './components/settings';
@@ -28,7 +31,7 @@ const Layout = () => {
   const pathForNav = location.pathname.split('/').pop();
 
   return (
-    <div className={`bc${background}`}>
+    <div className={`bc${background} vh100`}>
       {showNavbar && (
         <div className="dflex spacebetween acenter navbar">
           <svg width="24" height="24" className={`bc${background}`}>
@@ -57,36 +60,46 @@ const Layout = () => {
   );
 };
 
-const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={<Home />}
-        />
-        <Route path="Settings" element={<Settings />} />
-        <Route path="Cases" element={<Cases />} />
-        <Route path="HistoryCases" element={<HistoryCases />} />
-        <Route path="country/:country" element={<Country />} />
-        <Route path="historycountry/:country" element={<HistoryCountry />} />
-        <Route
-          path="RickAstley"
-          element={(
-            <iframe
-              width="360"
-              height="215"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            />
-            )}
-        />
-        <Route path="*" element={<div>Error 404: Page not found</div>} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
-);
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const storedColor = localStorage.getItem('selectedColor');
+    if (storedColor) {
+      dispatch(setColor(storedColor));
+    }
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={<Home />}
+          />
+          <Route path="Settings" element={<Settings />} />
+          <Route path="Cases" element={<Cases />} />
+          <Route path="HistoryCases" element={<HistoryCases />} />
+          <Route path="country/:country" element={<Country />} />
+          <Route path="historycountry/:country" element={<HistoryCountry />} />
+          <Route
+            path="RickAstley"
+            element={(
+              <iframe
+                width="360"
+                height="215"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+              )}
+          />
+          <Route path="*" element={<div>Error 404: Page not found</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;

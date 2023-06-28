@@ -8,6 +8,7 @@ const Country = () => {
   const dispatch = useDispatch();
   const { country } = useParams();
   const { isLoadingCases } = useSelector((store) => store.cases);
+  const background = useSelector((store) => store.cases.color);
 
   useEffect(() => {
     dispatch(getCases(country));
@@ -15,8 +16,8 @@ const Country = () => {
 
   if (isLoadingCases) {
     return (
-      <div className="loading">
-        <h1>Loading History...</h1>
+      <div className={`bc${background} loading`}>
+        <h1>Loading Data...</h1>
       </div>
     );
   }

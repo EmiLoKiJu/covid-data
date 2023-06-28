@@ -64,7 +64,7 @@ const casesSlice = createSlice({
     historicallObj: [],
     isLoadingCases: true,
     isLoadingHistory: true,
-    color: 'Pink',
+    color: 'Black',
   },
   extraReducers: (builder) => {
     builder

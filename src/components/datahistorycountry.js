@@ -1,12 +1,15 @@
+// eslint-disable import/no-extraneous-dependencies
+
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import 'chartjs-adapter-moment';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 Chart.register(...registerables);
 
-const DataHistoryCountry = () => {
+const DataHistoryCountry = ({ phrase }) => {
   const casesdata = useSelector((store) => store.cases.historicallObj.timeline.cases);
   const deathsdata = useSelector((store) => store.cases.historicallObj.timeline.deaths);
   const timeLabels = Object.keys(casesdata);
@@ -88,13 +91,17 @@ const DataHistoryCountry = () => {
 
   return (
     <div>
-      <div className={`data bcUp${background}`}>Hola como estay?</div>
+      <div className={`data bcUp${background}`}>{phrase}</div>
       <div>
         <Line className={`data bcDown${background}`} data={chartCasesData} options={options} />
         <Line className={`data bcDown${background}`} data={chartDeathsData} options={options} />
       </div>
     </div>
   );
+};
+
+DataHistoryCountry.propTypes = {
+  phrase: PropTypes.string.isRequired,
 };
 
 export default DataHistoryCountry;

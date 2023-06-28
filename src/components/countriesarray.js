@@ -12,6 +12,7 @@ import cubasvg from '../img/cubasvg.svg';
 import denmarksvg from '../img/denmarksvg.svg';
 import dominicasvg from '../img/dominicasvg.svg';
 import ecuadorsvg from '../img/ecuadorsvg.svg';
+import egyptsvg from '../img/egyptsvg.svg';
 import elsalvadorsvg from '../img/elsalvadorsvg.svg';
 import guatemalasvg from '../img/guatemalasvg.svg';
 import guyanasvg from '../img/guyanasvg.svg';
@@ -42,127 +43,256 @@ import vietnamsvg from '../img/vietnamsvg.svg';
 
 const countriesArray = [
   {
-    name: 'Afghanistan', path: '/Afghanistan', image: afganistansvg, alt: 'Afghanistan',
+    name: 'Afghanistan',
+    path: '/Afghanistan',
+    image: afganistansvg,
+    greeting: 'سلام، حال شما چطور است؟', // Pashto
   },
   {
-    name: 'Argentina', path: '/Argentina', image: argentinasvg, alt: 'Argentina',
+    name: 'Argentina',
+    path: '/Argentina',
+    image: argentinasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Bangladesh', path: '/Bangladesh', image: bangladeshsvg, alt: 'Bangladesh',
+    name: 'Bangladesh',
+    path: '/Bangladesh',
+    image: bangladeshsvg,
+    greeting: 'হাই, কেমন আছেন?', // Bengali
   },
   {
-    name: 'Bolivia', path: '/Bolivia', image: boliviasvg, alt: 'Bolivia',
+    name: 'Bolivia',
+    path: '/Bolivia',
+    image: boliviasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Brazil', path: '/Brazil', image: brazilsvg, alt: 'Brazil',
+    name: 'Brazil',
+    path: '/Brazil',
+    image: brazilsvg,
+    greeting: 'Olá, como você está?', // Portuguese
   },
   {
-    name: 'Canada', path: '/Canada', image: canadasvg, alt: 'Canada',
+    name: 'Canada',
+    path: '/Canada',
+    image: canadasvg,
+    greeting: 'Hello, how are you?', // English
   },
   {
-    name: 'Chile', path: '/Chile', image: chilesvg, alt: 'Chile',
+    name: 'Chile',
+    path: '/Chile',
+    image: chilesvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'China', path: '/China', image: chinasvg, alt: 'China',
+    name: 'China',
+    path: '/China',
+    image: chinasvg,
+    greeting: '你好，你好吗？', // Chinese (Simplified)
   },
   {
-    name: 'Colombia', path: '/Colombia', image: colombiasvg, alt: 'Colombia',
+    name: 'Colombia',
+    path: '/Colombia',
+    image: colombiasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Costa Rica', path: '/CostaRica', image: costaricasvg, alt: 'Costa Rica',
+    name: 'Costa Rica',
+    path: '/Costa%20Rica',
+    image: costaricasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Cuba', path: '/Cuba', image: cubasvg, alt: 'Cuba',
+    name: 'Cuba',
+    path: '/Cuba',
+    image: cubasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Denmark', path: '/Denmark', image: denmarksvg, alt: 'Denmark',
+    name: 'Denmark',
+    path: '/Denmark',
+    image: denmarksvg,
+    greeting: 'Hej, hvordan har du det?', // Danish
   },
   {
-    name: 'Dominica', path: '/Dominica', image: dominicasvg, alt: 'Dominica',
+    name: 'Dominica',
+    path: '/Dominica',
+    image: dominicasvg,
+    greeting: 'Hi, how are you?', // English
   },
   {
-    name: 'Ecuador', path: '/Ecuador', image: ecuadorsvg, alt: 'Ecuador',
+    name: 'Ecuador',
+    path: '/Ecuador',
+    image: ecuadorsvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'El Salvador', path: '/ElSalvador', image: elsalvadorsvg, alt: 'El Salvador',
+    name: 'Egypt',
+    path: '/Egypt',
+    image: egyptsvg,
+    greeting: 'مرحبًا، كيف حالك؟', // Arabic
   },
   {
-    name: 'Guatemala', path: '/Guatemala', image: guatemalasvg, alt: 'Guatemala',
+    name: 'El Salvador',
+    path: '/El%20Salvador',
+    image: elsalvadorsvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Guyana', path: '/Guyana', image: guyanasvg, alt: 'Guyana',
+    name: 'Guatemala',
+    path: '/Guatemala',
+    image: guatemalasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Haiti', path: '/Haiti', image: haitisvg, alt: 'Haiti',
+    name: 'Guyana',
+    path: '/Guyana',
+    image: guyanasvg,
+    greeting: 'Hi, how are you?', // English
   },
   {
-    name: 'Honduras', path: '/Honduras', image: hondurassvg, alt: 'Honduras',
+    name: 'Haiti',
+    path: '/Haiti',
+    image: haitisvg,
+    greeting: 'Bonjou, kijan ou ye?', // Haitian Creole
   },
   {
-    name: 'Hungary', path: '/Hungary', image: hungarysvg, alt: 'Hungary',
+    name: 'Honduras',
+    path: '/Honduras',
+    image: hondurassvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Italy', path: '/Italy', image: italisvg, alt: 'Italy',
+    name: 'Hungary',
+    path: '/Hungary',
+    image: hungarysvg,
+    greeting: 'Szia, hogy vagy?', // Hungarian
   },
   {
-    name: 'Jamaica', path: '/Jamaica', image: jamaicasvg, alt: 'Jamaica',
+    name: 'Italy',
+    path: '/Italy',
+    image: italisvg,
+    greeting: 'Ciao, come stai?', // Italian
   },
   {
-    name: 'Mexico', path: '/Mexico', image: mexicosvg, alt: 'Mexico',
+    name: 'Jamaica',
+    path: '/Jamaica',
+    image: jamaicasvg,
+    greeting: 'Hi, how yuh doin?', // Jamaican Patois
   },
   {
-    name: 'Japan', path: '/Japan', image: japansvg, alt: 'Japan',
+    name: 'Mexico',
+    path: '/Mexico',
+    image: mexicosvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Netherlands', path: '/Netherlands', image: netherlandssvg, alt: 'Netherlands',
+    name: 'Japan',
+    path: '/Japan',
+    image: japansvg,
+    greeting: 'こんにちは、元気ですか？', // Japanese
   },
   {
-    name: 'Nicaragua', path: '/Nicaragua', image: nicaraguasvg, alt: 'Nicaragua',
+    name: 'Netherlands',
+    path: '/Netherlands',
+    image: netherlandssvg,
+    greeting: 'Hallo, hoe gaat het met je?', // Dutch
   },
   {
-    name: 'Paraguay', path: '/Paraguay', image: paraguaysvg, alt: 'Paraguay',
+    name: 'Nicaragua',
+    path: '/Nicaragua',
+    image: nicaraguasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Peru', path: '/Peru', image: perusvg, alt: 'Peru',
+    name: 'Paraguay',
+    path: '/Paraguay',
+    image: paraguaysvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Dominican Republic', path: '/DominicanRepublic', image: republicadominicanasvg, alt: 'Dominican Republic',
+    name: 'Peru',
+    path: '/Peru',
+    image: perusvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Russia', path: '/Russia', image: russiasvg, alt: 'Russia',
+    name: 'Dominican Republic',
+    path: '/Dominican%20Republic',
+    image: republicadominicanasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'South Korea', path: '/SouthKorea', image: southcoreasvg, alt: 'South Korea',
+    name: 'Russia',
+    path: '/Russia',
+    image: russiasvg,
+    greeting: 'Привет, как дела?', // Russian
   },
   {
-    name: 'Spain', path: '/Spain', image: spainsvg, alt: 'Spain',
+    name: 'South Korea',
+    path: '/South%20Korea',
+    image: southcoreasvg,
+    greeting: '안녕하세요, 어떻게 지내세요?', // Korean
   },
   {
-    name: 'Suriname', path: '/Suriname', image: surinamesvg, alt: 'Suriname',
+    name: 'Spain',
+    path: '/Spain',
+    image: spainsvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Thailand', path: '/Thailand', image: thailandsvg, alt: 'Thailand',
+    name: 'Suriname',
+    path: '/Suriname',
+    image: surinamesvg,
+    greeting: 'Hi, fa waka?', // Sranan Tongo
   },
   {
-    name: 'Trinidad and Tobago', path: '/TrinidadAndTobago', image: trinidadytobagosvg, alt: 'Trinidad and Tobago',
+    name: 'Thailand',
+    path: '/Thailand',
+    image: thailandsvg,
+    greeting: 'สวัสดีครับ/ค่ะ สบายดีไหมครับ/ค่ะ?', // Thai
   },
   {
-    name: 'Ukraine', path: '/Ukraine', image: ukrainesvg, alt: 'Ukraine',
+    name: 'Trinidad and Tobago',
+    path: '/Trinidad%20And%20Tobago',
+    image: trinidadytobagosvg,
+    greeting: 'Hi, how yuh goin?', // Trinidadian English
   },
   {
-    name: 'United Kingdom', path: '/UnitedKingdom', image: unitedkindomsvg, alt: 'United Kingdom',
+    name: 'Ukraine',
+    path: '/Ukraine',
+    image: ukrainesvg,
+    greeting: 'Привіт, як справи?', // Ukrainian
   },
   {
-    name: 'United States', path: '/UnitedStates', image: unitedstatessvg, alt: 'United States',
+    name: 'United Kingdom',
+    path: '/United%20Kingdom',
+    image: unitedkindomsvg,
+    greeting: 'Hello, how are you?', // English
   },
   {
-    name: 'Uruguay', path: '/Uruguay', image: uruguaysvg, alt: 'Uruguay',
+    name: 'United States',
+    path: '/United%20States',
+    image: unitedstatessvg,
+    greeting: 'Hi, how are you?', // English
   },
   {
-    name: 'Venezuela', path: '/Venezuela', image: venezuelasvg, alt: 'Venezuela',
+    name: 'Uruguay',
+    path: '/Uruguay',
+    image: uruguaysvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
   },
   {
-    name: 'Vietnam', path: '/Vietnam', image: vietnamsvg, alt: 'Vietnam',
+    name: 'Venezuela',
+    path: '/Venezuela',
+    image: venezuelasvg,
+    greeting: 'Hola, ¿cómo estás?', // Spanish
+  },
+  {
+    name: 'Vietnam',
+    path: '/Vietnam',
+    image: vietnamsvg,
+    greeting: 'Xin chào, bạn khỏe không?', // Vietnamese
   },
 ];
 

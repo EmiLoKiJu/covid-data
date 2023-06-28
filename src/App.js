@@ -28,7 +28,7 @@ const Layout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const showNavbar = location.pathname !== '/';
-  const pathForNav = location.pathname.split('/').pop();
+  const pathForNav = location.pathname.split('/').pop().replace(/%20/g, ' ');
 
   return (
     <div className={`bc${background} vh100`}>
@@ -41,7 +41,7 @@ const Layout = () => {
               <image onClick={() => navigate(-1)} xlinkHref={previousbutton} width="100%" height="100%" />
             )}
           </svg>
-          <div className={`bc${background}`}>
+          <div className={`bc${background} navtitle`}>
             <h2>{pathForNav}</h2>
           </div>
           <svg width="24" height="24" className={`bc${background}`}>

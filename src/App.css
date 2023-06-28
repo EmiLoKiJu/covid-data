@@ -107,6 +107,11 @@ h3 {
   color: white;
 }
 
+.navtitle {
+  width: 80%;
+  text-align: center;
+}
+
 .titlecont {
   min-width: 180px;
 }
@@ -137,11 +142,16 @@ h3 {
 
 .imgmenu {
   width: 100%;
-  background-color: blueviolet;
 }
 
 .backbutton {
   border: none;
+}
+
+.countryname {
+  position: absolute;
+  margin-left: 4%;
+  margin-top: 5px;
 }
 
 .blockcont {
@@ -175,18 +185,22 @@ h3 {
 
 .bcBlack {
   background-color: rgba(32, 32, 32, 1);
+  color: white;
 }
 
 .bcRed {
   background-color: rgba(201, 7, 7, 1);
+  color: white;
 }
 
 .bcBlue {
   background-color: rgba(15, 15, 172, 1);
+  color: white;
 }
 
 .bcGreen {
   background-color: rgba(0, 94, 0, 1);
+  color: white;
 }
 
 .bcUpWhite {
@@ -201,18 +215,22 @@ h3 {
 
 .bcUpBlack {
   background-color: rgba(46, 46, 46, 1);
+  color: white;
 }
 
 .bcUpRed {
   background-color: rgba(211, 9, 9, 1);
+  color: white;
 }
 
 .bcUpBlue {
   background-color: rgba(18, 18, 197, 1);
+  color: white;
 }
 
 .bcUpGreen {
   background-color: rgba(0, 112, 0, 1);
+  color: white;
 }
 
 .bcDownWhite {
@@ -227,16 +245,20 @@ h3 {
 
 .bcDownBlack {
   background-color: rgba(0, 0, 0, 1);
+  color: white;
 }
 
 .bcDownRed {
   background-color: rgba(189, 6, 6, 1);
+  color: white;
 }
 
 .bcDownBlue {
   background-color: rgba(12, 12, 158, 1);
+  color: white;
 }
 
 .bcDownGreen {
   background-color: rgba(0, 75, 0, 1);
+  color: white;
 }

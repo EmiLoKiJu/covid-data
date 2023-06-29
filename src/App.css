@@ -148,6 +148,10 @@ h3 {
   border: none;
 }
 
+.credits {
+  padding: 4%;
+}
+
 .countryname {
   position: absolute;
   margin-left: 4%;

@@ -83,7 +83,7 @@ const App = () => {
           <Route path="HistoryCases" element={<HistoryCases />} />
           <Route path="country/:country" element={<Country />} />
           <Route path="historycountry/:country" element={<HistoryCountry />} />
-          <Route path="credits" element={<CreditsForThis />} />
+          <Route path="Credits" element={<CreditsForThis />} />
           <Route
             path="RickAstley"
             element={(

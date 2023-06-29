@@ -22,7 +22,7 @@ import previousbutton from './img/previousbutton.svg';
 import previousbuttonblack from './img/previousbuttonblack.svg';
 import settingsicon from './img/settingsicon.svg';
 import settingsiconblack from './img/settingsiconblack.svg';
-import Credits from './components/credits';
+import CreditsForThis from './components/credits';
 
 const Layout = () => {
   const background = useSelector((store) => store.cases.color);
@@ -83,7 +83,7 @@ const App = () => {
           <Route path="HistoryCases" element={<HistoryCases />} />
           <Route path="country/:country" element={<Country />} />
           <Route path="historycountry/:country" element={<HistoryCountry />} />
-          <Route path="credits" element={<Credits />} />
+          <Route path="credits" element={<CreditsForThis />} />
           <Route
             path="RickAstley"
             element={(

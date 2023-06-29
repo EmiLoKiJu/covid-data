@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
-const Credits = () => {
+const CreditsForThis = () => {
   const background = useSelector((store) => store.cases.color);
   return (
     <div className={`credits bc${background}`}>
@@ -20,4 +20,4 @@ const Credits = () => {
   );
 };
 
-export default Credits;
+export default CreditsForThis;

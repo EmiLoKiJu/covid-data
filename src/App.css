@@ -152,6 +152,10 @@ h3 {
   padding: 4%;
 }
 
+.bar {
+  margin: 32px 0;
+}
+
 .countryname {
   position: absolute;
   margin-left: 4%;

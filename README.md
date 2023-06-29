@@ -53,10 +53,12 @@ TailWind
 
 ### Video Presentation <a name="video-presentation"></a>
 
+[Link to video presentation](https://youtu.be/eEB3oMOrVAg)
+
 ### Live Demo <a name="live-demo"></a>
 
 Feel free to check the live demo for this project
-(deployed with render.com) [link](https://coviddata.onrender.com/)
+(deployed with render.com) [link to live demo](https://coviddata.onrender.com/)
 
 <!-- GETTING STARTED -->
 

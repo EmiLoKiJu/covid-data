@@ -9,11 +9,9 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    - [Video Presentation](#video-presentation)
-    - [Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
@@ -40,8 +38,6 @@ TailWind
 [React](https://github.com/facebook/create-react-app)
 [React-redux](https://redux.js.org/introduction/installation)
 [Axios](https://axios-http.com/docs/intro)
-[React router](https://reactrouter.com/en/main)
-[Chart.js](https://www.chartjs.org/)
 
 <!-- Features -->
 
@@ -50,13 +46,6 @@ TailWind
 - **A covid-data mobile app**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Video Presentation <a name="video-presentation"></a>
-
-### Live Demo <a name="live-demo"></a>
-
-Feel free to check the live demo for this project
-(deployed with render.com) [link](https://coviddata.onrender.com/)
 
 <!-- GETTING STARTED -->
 
@@ -97,12 +86,9 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
+You can run the following line to test all test files: npm test -- --watchAll
+
 Launches the test runner in the interactive watch mode.\
-
-You can also run the following line to test all test files: 
-
-npm test -- --watchAll
-
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
@@ -171,11 +157,7 @@ If you like this project give it a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Design: [design](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
-Maps images: [vemaps](https://vemaps.com/)
-Some of the icons: [iconpacks](https://www.iconpacks.net/)
-
-**And finally, I would like to thank to Microverse for giving this inspiring project**
+**I would like to thank to Microverse for giving this inspiring project**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

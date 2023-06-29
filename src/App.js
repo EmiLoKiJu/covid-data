@@ -22,7 +22,6 @@ import previousbutton from './img/previousbutton.svg';
 import previousbuttonblack from './img/previousbuttonblack.svg';
 import settingsicon from './img/settingsicon.svg';
 import settingsiconblack from './img/settingsiconblack.svg';
-import Credits from './components/credits';
 
 const Layout = () => {
   const background = useSelector((store) => store.cases.color);
@@ -73,7 +72,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="covid-data/" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route
             index
             element={<Home />}
@@ -83,7 +82,6 @@ const App = () => {
           <Route path="HistoryCases" element={<HistoryCases />} />
           <Route path="country/:country" element={<Country />} />
           <Route path="historycountry/:country" element={<HistoryCountry />} />
-          <Route path="credits" element={<Credits />} />
           <Route
             path="RickAstley"
             element={(

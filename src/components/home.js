@@ -17,7 +17,7 @@ const Home = () => {
         <div className="titlecont dflex flexcol jcenter">
           <h2 className="lato">Covid stats</h2>
           <h3 className="gill-sans">made By EmiLoKiJu</h3>
-          <Link to="./credits"><h3 className="gill-sans">See Credits</h3></Link>
+          <h3 className="gill-sans">See Credits</h3>
         </div>
       </div>
       <div className="dflex">

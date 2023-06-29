@@ -11,7 +11,6 @@ import {
   Link,
 } from 'react-router-dom';
 import { setColor } from './redux/cases/casesSlice';
-import './App.css';
 import Home from './components/home';
 import Settings from './components/settings';
 import Cases from './components/cases';

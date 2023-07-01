@@ -98,7 +98,7 @@ const DataCountry = ({ phrase }) => {
           options={options}
           className="bar"
         />
-        <div className="credits">
+        <div className="credits" data-testid="credits">
           {Object.entries(cases).map(([key, value]) => (
             <div key={key}>
               <span>

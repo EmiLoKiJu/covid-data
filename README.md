@@ -53,7 +53,9 @@ TailWind
 
 ### Video Presentation <a name="video-presentation"></a>
 
-[Link to video presentation](https://youtu.be/eEB3oMOrVAg)
+[Link to video presentation](https://youtu.be/UbMb_xzAMrQ)
+
+([Link to old video](https://youtu.be/eEB3oMOrVAg))
 
 ### Live Demo <a name="live-demo"></a>
 
@@ -173,7 +175,7 @@ If you like this project give it a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Design: [design](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+Original design idea by Nelson Sakwa on [Behance](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
 Maps images: [vemaps](https://vemaps.com/)
 Some of the icons: [iconpacks](https://www.iconpacks.net/)
 

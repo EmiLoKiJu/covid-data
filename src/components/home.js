@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import covid from '../img/covid.svg';
 import Settings from '../img/Settings.png';

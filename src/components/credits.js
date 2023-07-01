@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector } from 'react-redux';
 
 const CreditsForThis = () => {
   const background = useSelector((store) => store.cases.color);
   return (
-    <div className={`credits bc${background}`}>
+    <div className={`credits bc${background}`} data-testid="credits">
       <div>
         Design: Nelson Sakwa on&nbsp;
         <a className={`bc${background}`} href="https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)" target="_blank" rel="noreferrer">Behance</a>

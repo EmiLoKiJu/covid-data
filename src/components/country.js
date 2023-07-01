@@ -34,7 +34,7 @@ const Country = () => {
   }
 
   return (
-    <div>
+    <div data-testid="datacont">
       <DataCountry phrase={greeting(country)} />
     </div>
   );

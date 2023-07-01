@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import HistoryCountry from '../components/HistoryCountry';
+import HistoryCountry from '../components/historycountry';
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),

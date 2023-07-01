@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import HistoryCases from '../components/HistoryCases';
+import HistoryCases from '../components/historycases';
 
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),

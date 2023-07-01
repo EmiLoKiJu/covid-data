@@ -1,38 +1,272 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  margin: 0;
+  padding: 1%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  margin: 0;
+  padding: 1%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans\ Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans\ Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gill-sans';
+  src: url('./fonts/GillSans/Gill\ Sans\ Medium.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('./fonts/Lato/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('./fonts/Lato/Lato-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('./fonts/Lato/Lato-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.lato {
+  font-family: 'lato', sans-serif;
+}
+
+.gill-sans {
+  font-family: 'gill-sans', sans-serif;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.country {
+  width: 100%;
+  height: auto;
+}
+
+.dflex {
   display: flex;
+}
+
+.flexcol {
   flex-direction: column;
-  align-items: center;
+}
+
+.jcenter {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.acenter {
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.spacebetween {
+  justify-content: space-between;
+}
+
+.loading {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navtitle {
+  width: 80%;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titlecont {
+  min-width: 180px;
+}
+
+.home {
+  height: 100vh;
+  color: white;
+}
+
+.navbar {
+  color: white;
+  padding: 1% 1%;
+}
+
+.data {
+  color: white;
+  padding: 5%;
+}
+
+.almostnavbar {
+  width: 90%;
+  padding: 24px 4%;
+}
+
+.menuimg {
+  width: 50%;
+}
+
+.imgmenu {
+  width: 100%;
+}
+
+.backbutton {
+  border: none;
+}
+
+.credits {
+  padding: 4%;
+}
+
+.bar {
+  margin: 32px 0;
+}
+
+.countryname {
+  position: absolute;
+  margin-left: 4%;
+  margin-top: 5px;
+}
+
+.blockcont {
+  flex: 1;
+}
+
+.block1 {
+  width: 100%;
+  height: 24px;
+}
+
+.block2 {
+  width: 50%;
+  height: 24px;
+}
+
+.block3 {
+  width: 50%;
+  height: 24px;
+}
+
+.bcWhite {
+  background-color: rgba(221, 221, 221, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.bcPink {
+  background-color: rgba(236, 63, 159, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.bcBlack {
+  background-color: rgba(32, 32, 32, 1);
+  color: white;
+}
+
+.bcRed {
+  background-color: rgba(201, 7, 7, 1);
+  color: white;
+}
+
+.bcBlue {
+  background-color: rgba(15, 15, 172, 1);
+  color: white;
+}
+
+.bcGreen {
+  background-color: rgba(0, 94, 0, 1);
+  color: white;
+}
+
+.bcUpWhite {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.bcUpPink {
+  background-color: rgba(255, 68, 171, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.bcUpBlack {
+  background-color: rgba(46, 46, 46, 1);
+  color: white;
+}
+
+.bcUpRed {
+  background-color: rgba(211, 9, 9, 1);
+  color: white;
+}
+
+.bcUpBlue {
+  background-color: rgba(18, 18, 197, 1);
+  color: white;
+}
+
+.bcUpGreen {
+  background-color: rgba(0, 112, 0, 1);
+  color: white;
+}
+
+.bcDownWhite {
+  background-color: rgba(190, 190, 190, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.bcDownPink {
+  background-color: rgba(206, 55, 138, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.bcDownBlack {
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.bcDownRed {
+  background-color: rgba(189, 6, 6, 1);
+  color: white;
+}
+
+.bcDownBlue {
+  background-color: rgba(12, 12, 158, 1);
+  color: white;
+}
+
+.bcDownGreen {
+  background-color: rgba(0, 75, 0, 1);
+  color: white;
 }

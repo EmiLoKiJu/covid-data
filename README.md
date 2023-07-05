@@ -53,9 +53,7 @@ TailWind
 
 ### Video Presentation <a name="video-presentation"></a>
 
-[Link to video presentation](https://youtu.be/UbMb_xzAMrQ)
-
-([Link to old video](https://youtu.be/eEB3oMOrVAg))
+[Link to video presentation](https://youtu.be/eEB3oMOrVAg)
 
 ### Live Demo <a name="live-demo"></a>
 

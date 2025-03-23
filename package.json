@@ -49,7 +49,7 @@
     "@babel/eslint-parser": "^7.22.5",
     "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "@babel/plugin-syntax-jsx": "^7.22.5",
-    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-react": "^7.26.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "eslint": "^7.32.0",

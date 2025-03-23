@@ -54,7 +54,7 @@ const Layout = () => {
           </svg>
         </div>
       )}
-      <div className="not-navbar">
+      <div className="not-navBar">
         <Outlet />
       </div>
     </div>
@@ -63,12 +63,13 @@ const Layout = () => {
 
 const App = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     const storedColor = localStorage.getItem('selectedColor');
     if (storedColor) {
       dispatch(setColor(storedColor));
     }
-  }, []);
+  }, [dispatch]); // Added 'dispatch' to the dependency array
 
   return (
     <BrowserRouter>
@@ -93,9 +94,9 @@ const App = () => {
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen
               />
-              )}
+            )}
           />
           <Route path="*" element={<div>Error 404: Page not found</div>} />
         </Route>

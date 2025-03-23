@@ -1,69 +1,61 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 import { setColor } from '../redux/cases/casesSlice';
 
 const Settings = () => {
   const dispatch = useDispatch();
   const background = useSelector((store) => store.cases.color);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setAnimated(true);
+  }, []);
 
   const handleColors = (e) => {
     localStorage.setItem('selectedColor', e);
     dispatch(setColor(e));
   };
 
+  const colorOptions = [
+    { name: 'Red', label: 'Red' },
+    { name: 'Blue', label: 'Blue' },
+    { name: 'Green', label: 'Green' },
+    { name: 'Black', label: 'Black' },
+    { name: 'White', label: 'White' },
+    { name: 'Pink', label: 'Pink' },
+  ];
+
   return (
-    <>
-      <div className="dflex">
-        <div className="blockcont dfex">
-          <div className="block1 bcRed" />
-          <div className="dflex">
-            <div className="block2 bcUpRed" />
-            <div className="block3 bcDownRed" />
-          </div>
-          <button className="block1" type="button" onClick={() => handleColors('Red')}>Red</button>
-        </div>
-        <div className="blockcont">
-          <div className="block1 bcBlue" />
-          <div className="dflex">
-            <div className="block2 bcUpBlue" />
-            <div className="block3 bcDownBlue" />
-          </div>
-          <button className="block1" type="button" onClick={() => handleColors('Blue')}>Blue</button>
-        </div>
-        <div className="blockcont">
-          <div className="block1 bcGreen" />
-          <div className="dflex">
-            <div className="block2 bcUpGreen" />
-            <div className="block3 bcDownGreen" />
-          </div>
-          <button className="block1" type="button" onClick={() => handleColors('Green')}>Green</button>
-        </div>
-        <div className="blockcont">
-          <div className="block1 bcBlack" />
-          <div className="dflex">
-            <div className="block2 bcUpBlack" />
-            <div className="block3 bcDownBlack" />
-          </div>
-          <button className="block1" type="button" onClick={() => handleColors('Black')}>Black</button>
-        </div>
-        <div className="blockcont">
-          <div className="block1 bcWhite" />
-          <div className="dflex">
-            <div className="block2 bcUpWhite" />
-            <div className="block3 bcDownWhite" />
-          </div>
-          <button className="block1" type="button" onClick={() => handleColors('White')}>White</button>
-        </div>
-        <div className="blockcont">
-          <div className="block1 bcPink" />
-          <div className="dflex">
-            <div className="block2 bcUpPink" />
-            <div className="block3 bcDownPink" />
-          </div>
-          <button className="block1" type="button" onClick={() => handleColors('Pink')}>Pink</button>
-        </div>
+    <div className={`settings-container bc${background}`}>
+      <h2 className="settings-title title-animation">Theme Settings</h2>
+      <p className="settings-subtitle subtitle-animation">Choose your preferred color theme</p>
+
+      <div className={`color-options-grid ${animated ? 'animated' : ''}`}>
+        {colorOptions.map((color, index) => (
+          <button
+            key={color.name}
+            type="button"
+            className={`color-option color-item-${index + 1} ${background === color.name ? 'selected' : ''}`}
+            onClick={() => handleColors(color.name)}
+          >
+            <div className={`color-preview bc${color.name}`} />
+            <div className="color-samples">
+              <div className={`color-sample-up bcUp${color.name}`} />
+              <div className={`color-sample-down bcDown${color.name}`} />
+            </div>
+            <span className={`color-button bc${color.name}`}>
+              {color.label}
+            </span>
+          </button>
+        ))}
       </div>
-      <div className={`data bcUp${background}`}>Hola como estay?</div>
-    </>
+
+      <div className={`theme-preview bcUp${background}`}>
+        <h3>Theme Preview</h3>
+        <p>This is how your selected theme looks</p>
+      </div>
+    </div>
   );
 };
 

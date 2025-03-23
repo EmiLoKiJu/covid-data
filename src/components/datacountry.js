@@ -1,10 +1,17 @@
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
+import { useState, useEffect } from 'react';
 
 const DataCountry = ({ phrase }) => {
   const cases = useSelector((store) => store.cases.casesObj);
   const background = useSelector((store) => store.cases.color);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setAnimated(true);
+  }, []);
 
   const finalbc = (background) => {
     switch (background) {
@@ -22,6 +29,7 @@ const DataCountry = ({ phrase }) => {
         return 'rgba(236, 63, 159, 1)';
     }
   };
+
   const textcolor = (background) => (background === 'White' || background === 'Pink' ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)');
 
   const generateChartData = () => ({
@@ -80,37 +88,44 @@ const DataCountry = ({ phrase }) => {
   };
 
   return (
-    <div>
-      <div className={`data bcDown${background}`}>{phrase}</div>
-      <div className={`data bcUp${background}`}>
-        <Bar
-          data={generateChartData()}
-          options={options}
-          className="bar"
-        />
-        <Bar
-          data={generateChartData2()}
-          options={options}
-          className="bar"
-        />
-        <Bar
-          data={generateChartData3()}
-          options={options}
-          className="bar"
-        />
-        <div className="credits" data-testid="credits">
-          {Object.entries(cases).map(([key, value]) => (
-            <div key={key}>
-              <span>
-                {key}
-                :
-                {' '}
-              </span>
-              <span>{value}</span>
+    <div className="data-container">
+      <div className={`data-header bcDown${background}`}>{phrase}</div>
+      <div className={`data-content bcUp${background} ${animated ? 'animated' : ''}`}>
+        <div className="chart-container chart-item-1">
+          <h3 className="chart-title">Overall Statistics</h3>
+          <Bar
+            data={generateChartData()}
+            options={options}
+            className="chart"
+          />
+        </div>
+
+        <div className="chart-container chart-item-2">
+          <h3 className="chart-title">Today&apos;s Statistics</h3>
+          <Bar
+            data={generateChartData2()}
+            options={options}
+            className="chart"
+          />
+        </div>
+
+        <div className="chart-container chart-item-3">
+          <h3 className="chart-title">Statistics Per Million</h3>
+          <Bar
+            data={generateChartData3()}
+            options={options}
+            className="chart"
+          />
+        </div>
+
+        <div className="data-stats">
+          {Object.entries(cases).map(([key, value], index) => (
+            <div key={key} className={`stat-item stat-item-${index + 1}`}>
+              <div className="stat-label">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
+              <div className="stat-value">{value}</div>
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

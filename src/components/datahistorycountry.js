@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import 'chartjs-adapter-moment';
 import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
@@ -17,6 +18,12 @@ const DataHistoryCountry = ({ phrase }) => {
   const casesvalues = Object.values(casesdata);
   const deathsvalues = Object.values(deathsdata);
   const background = useSelector((store) => store.cases.color);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setAnimated(true);
+  }, []);
 
   const finalbc = (background) => {
     switch (background) {
@@ -68,13 +75,11 @@ const DataHistoryCountry = ({ phrase }) => {
   const options = {
     scales: {
       x: {
-        type: 'time',
         ticks: {
           color: textcolor(background),
         },
       },
       y: {
-        type: 'linear',
         ticks: {
           color: textcolor(background),
         },
@@ -90,11 +95,26 @@ const DataHistoryCountry = ({ phrase }) => {
   };
 
   return (
-    <div>
-      <div className={`data bcUp${background}`}>{phrase}</div>
-      <div>
-        <Line className={`data bcDown${background}`} data={chartCasesData} options={options} />
-        <Line className={`data bcDown${background}`} data={chartDeathsData} options={options} />
+    <div className="data-container">
+      <div className={`data-header bcDown${background}`}>{phrase}</div>
+      <div className={`data-content bcUp${background} ${animated ? 'animated' : ''}`}>
+        <div className="chart-container chart-item-1">
+          <h3 className="chart-title">Cases Over Time</h3>
+          <Line
+            data={chartCasesData}
+            options={options}
+            className="chart"
+          />
+        </div>
+
+        <div className="chart-container chart-item-2">
+          <h3 className="chart-title">Deaths Over Time</h3>
+          <Line
+            data={chartDeathsData}
+            options={options}
+            className="chart"
+          />
+        </div>
       </div>
     </div>
   );

@@ -201,6 +201,7 @@ h3 {
   border-radius: 12px;
   background: transparent;
   padding: 15px;
+  text-decoration: none;
 }
 
 .menuimg:hover {
@@ -942,6 +943,11 @@ h3 {
   font-family: 'lato', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.time-select option {
+  background-color: #333;
+  color: white;
 }
 
 .time-select:hover {

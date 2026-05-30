@@ -19,12 +19,14 @@ const HistoryCountry = () => {
     setAnimated(true);
 
     const storedValue = localStorage.getItem('selectedValue');
+    const valueToUse = storedValue || selectedValue;
     if (storedValue) {
       setSelectedValue(storedValue);
     }
     // eslint-disable-next-line max-len
-    dispatch(getHistoricallData({ inputcountry: country, lastdays: storedValue * 30 || selectedValue * 30 }));
-  }, []);
+    dispatch(getHistoricallData({ inputcountry: country, lastdays: valueToUse * 30 }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [country, dispatch]);
 
   const greeting = (countryname) => {
     for (let i = 0; i < countriesArray.length; i += 1) {

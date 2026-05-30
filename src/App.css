@@ -317,6 +317,14 @@ h3 {
 .credits-link {
   animation-delay: 0.6s;
   position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.credits-link:hover {
+  opacity: 0.8;
 }
 
 .credits-link::after {
@@ -324,7 +332,7 @@ h3 {
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   background-color: currentColor;
   transition: width 0.3s ease;
@@ -1087,6 +1095,48 @@ h3 {
 
   .data-stats {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.rickastley-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.rickastley-iframe {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16/9;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .countries-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .country-image-container {
+    height: 100px;
+  }
+
+  .color-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .data-stats {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .rickastley-container {
+    padding: 10px;
   }
 }
 
